@@ -26,6 +26,8 @@ document.body.innerHTML='Hello';    :- removes everything in body of webpage and
 
 ## STRINGS
 
+![alt text](image-11.png)
+
 ### Concatenation
 
 'some' + 'text' returns 'sometext'
@@ -42,4 +44,59 @@ converted into
 finally returns 'hello3' 
   3 is converted into a string
 
-This is known as Type coercion (automatic type conversion )
+### This is known as Type coercion (automatic type conversion )
+
+How to get $28.94
+
+wrong:-  '$' + 20.95 + 7.99 this returns '$20.957.99'
+
+ie (1) '$20.95' + 7.99
+
+   (2) '$20.957.99'
+
+ partially correct:- '$' (20.95+7.99) this will return '$28.9399999999999999998'
+
+but we need 28.94
+
+correct:- '$' + (2095+799)/100 returns
+'$28.94'
+
+-------------------------------------------
+
+'Items(' +(1+1)+ '): $' + (2095+799)/100
+returns
+'Items(2): $28.94'
+
+------------------------------------------
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
+-----------------------------------------
+
+![alt text](image-12.png )
+
+These template string have some special features(just line f-strings in python)
+
+1) Interpolation = insert value directly into a string
+Ex:- 'Items($(1+1))' = Items(2)
+
+2) Multi-line string:- 'some
+                        text'
+
+![alt text](image-13.png)                        
+
+--------------------------------------------
+
+## javascript code in html file
+
+USE <script> ... </script>  to write java script code in it
+ 
+
+attributes for JS:-
+
+onclick=" js code " 
+   EX:-  onclick="alert('Good Job')";
+
+  
+
+The JS code inside <script></script> runs first than onclick JS code runs first  
