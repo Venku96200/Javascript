@@ -89,7 +89,7 @@ Ex:- 'Items($(1+1))' = Items(2)
 
 ## javascript code in html file
 
-USE <script> ... </script>  to write java script code in it
+USE <script></script> to write java script code in it
  
 
 attributes for JS:-
@@ -100,3 +100,21 @@ onclick=" js code "
   
 
 The JS code inside <script></script> runs first than onclick JS code runs first  
+
+### Comments in JS
+
+// This is a comment
+
+
+![alt text](image-14.png)
+
+## Variables
+
+![alt text](image-15.png)
+
+
+![alt text](image-16.png)
+
+camelCase is used generally in JAVASCRIPT
+
+![alt text](image-17.png)
