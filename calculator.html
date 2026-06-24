@@ -23,7 +23,6 @@
                 calculation+=' + ';
                 console.log(calculation);">+</button>
         </p>
-
         <p>
             <button onclick="
                 calculation+='4';
@@ -72,7 +71,7 @@
                 console.log(calculation);
                 ">.</button>
             <button onclick="
-                calculation=eval(calculation)
+                calculation=eval(calculation)  // Here eval(calculation) converts the calculation string into actual math
                 console.log(calculation);
                 ">=</button>
             <button onclick="
@@ -82,7 +81,6 @@
         <button onclick="
             calculation='';
             console.log('CLEARED!')
-
         "
         >Clear</button>
         <script>

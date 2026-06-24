@@ -118,3 +118,29 @@ The JS code inside <script></script> runs first than onclick JS code runs first
 camelCase is used generally in JAVASCRIPT
 
 ![alt text](image-17.png)
+
+--------------------------------
+
+Boolens and if-statements
+
+![alt text](image-20.png)
+
+![alt text](image-21.png)
+
+![alt text](image-22.png)
+
+![alt text](image-23.png)
+
+![alt text](image-24.png)
+
+Math.random() :- generates a random number btw 0 and 1
+
+![alt text](image-25.png)
+
+var doesnt follow the rules of scope
+
+![alt text](image-26.png)
+
+![alt text](image-27.png)
+
+![alt text](image-28.png)

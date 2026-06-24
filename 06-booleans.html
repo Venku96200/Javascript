@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Booleans</title>
+    </head>
+    <body>
+        <script>
+            console.log(3 > 5);
+            console.log(typeof true);  // prints boolean
+            console.log(5 == '5.00');  //This prints true even though one is number and other is string(string converts into number)
+
+            console.log(5 === '5.00'); //This prints false
+
+            console.log(3 > 5-5);  //5-5 is evaluated first than comparision is done
+
+            //  IF- Statements
+
+            if(3>6){
+                console.log('Hello');
+            }else if(3===6){
+                console.log('world')
+            }else{
+                console.log('you gay')
+            }
+
+            // Logical Operators
+
+            console.log( true && false);
+            console.log( true || false);
+            console.log( !true);
+
+            // Truthy and Falsy Values
+
+            if(5){   //Here 5 is known as Truthy value because it behaves just like True
+               console.log('truthy');
+            }
+
+            if(0){  // 0 is know as Falsy Value because it behaves just like False
+               console.log('Falsy');   //This doesnt print as 0=false
+            }
+
+            // Falsy values:- false, 0, '', NaN, undefined, null
+            // Truthy values:- remaining all the alphabets, numbers and symbols etc 
+
+
+
+            // SHORTCUTS FOR IF-STATEMENTS
+
+            // 1) Ternary operator:-
+                  3>2? 'istrue' : 'isfalse';
+
+                  //Benifits of ternary operator:- we can save the result in a variable
+                  const result= 5>100? 'istrue': 'isflase';
+                  console.log(result);
+
+            // 2) Guard Operator:-
+              
+               false && console.log('hello');
+
+               //as the first part itself is false, the secon part isnt evaulated
+               //Hence, We can use the first value to block or guard the second value
+               //The top, snippet is similar to
+               if(false){
+                console.log('hello');
+               }
+               //Just like ternary operator we can store output of guard operator inside a variable
+
+               const message = 5 && 'hello';
+               console.log(message);             //This outputs 'hello'
+
+            // 3) Default Operator:-
+               const currency1='Eur'||'usd';
+               console.log(currency1);        // Will output default currency(ie Eur)
+
+               //here if the first part is true , then the second part itsnt checked
+
+
+               const currency2=undefined ||'usd';
+               console.log(currency2);         // Will output usd
+               
+        </script>
+    </body>
+</html>

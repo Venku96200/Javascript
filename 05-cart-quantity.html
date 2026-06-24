@@ -9,14 +9,34 @@
     <body>
         <p>Cart Quantity</p>
         <button onclick="console.log(`Cart Quantity : ${quantity}`);"> Show Quantity</button>
-        <button onclick="quantity++;
-                         console.log(`Cart Quantity : ${quantity}`);">Add to Cart</button>
-        <button onclick="quantity++;
-                         console.log(`Cart Quantity : ${quantity}`);">+1</button>
-        <button onclick="quantity+=2;
-                         console.log(`Cart Quantity : ${quantity}`);">+2</button>
-        <button onclick="quantity+=3;
-                         console.log(`Cart Quantity : ${quantity}`);">+3</button>
+        <button onclick="
+                        if(quantity==10){
+                            console.log('Cart Is Full');
+                        }else{
+                            quantity++;
+                            console.log(`Cart Quantity : ${quantity}`);
+                        }">Add to Cart</button>
+        <button onclick="
+                        if(quantity==0){
+                            console.log('Cart is Empty');
+                        }else{
+                            quantity--;
+                            console.log(`Cart Quantity : ${quantity}`);
+                        }">-1</button>
+        <button onclick="
+                        if(quantity+2>10){
+                            console.log('Cart Is Full');
+                        }else{
+                            quantity+=2;
+                            console.log(`Cart Quantity : ${quantity}`);
+                        }">+2</button>
+        <button onclick="
+                        if(quantity+3>10){
+                            console.log('Cart Is Full');
+                        }else{
+                            quantity+=3;
+                            console.log(`Cart Quantity : ${quantity}`);
+                        }">+3</button>
         <button onclick="console.log('Cart Was Reset')
                          quantity=0;
                          console.log(`Cart Quantity : ${quantity}`);">Reset cart</button>
