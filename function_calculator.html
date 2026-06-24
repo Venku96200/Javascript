@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Calculator</title>
+    </head>
+    <body>
+        <p> Calculator</p>
+        <p>
+            <button onclick="
+                console.log(result('1'));
+                "
+            >1</button>
+            <button onclick="
+                console.log(result('2'));
+                ">2</button>
+            <button onclick="
+                console.log(result('3'));
+                ">3</button>
+            <button onclick="
+                console.log(result(' + '));">+</button>
+        </p>
+        <p>
+            <button onclick="
+               console.log(result('4'));
+                "
+            >4</button>
+            <button onclick="
+                console.log(result('5'));
+                ">5</button>
+            <button onclick="
+                console.log(result('6'));
+                ">6</button>
+            <button onclick="
+                console.log(result(' - '));">-</button>
+        </p>
+
+        <p>
+            <button onclick="
+                console.log(result('7'));
+                "
+            >7</button>
+            <button onclick="
+                console.log(result('8'));
+                ">8</button>
+            <button onclick="
+                console.log(result('9'));
+                ">9</button>
+            <button onclick="
+                console.log(result(' * '));">*</button>
+        </p>
+        <p>
+            <button onclick="
+                console.log(result('0'));
+                "
+            >0</button>
+            <button onclick="
+                console.log(result('.'));
+                ">.</button>
+            <button onclick="
+                calculation=eval(calculation)  // Here eval(calculation) converts the calculation string into actual math
+                console.log(calculation);
+                ">=</button>
+            <button onclick="
+               console.log(result(' / '));">/</button>
+        </p>
+        <button onclick="
+            calculation='';
+            console.log('CLEARED!')
+        "
+        >Clear</button>
+        <script>
+            let calculation='';
+            function result(click){
+                calculation+=click;
+                return calculation;
+            }
+
+        </script>
+    </body>
+</html>
