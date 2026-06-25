@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Objects</title> 
+    </head>
+    <body>
+        <script>
+            // An object groups multiple values together
+            // Inside a object we can store any type of values (we ca also store objects as values )
+/*
+             const object_name={
+Template:-      property:'values'
+             };
+*/
+            const product={
+                name: 'socks',
+                price: 1090
+            };
+
+            // Printing entire object
+            console.log(product);
+
+            // Accessing the Values associated to certain properties
+            console.log(product.name);
+            console.log(product.price);
+
+            //Changing a value inside a object
+            product.name='cotton boy';
+            console.log(product);
+
+            //Adding a New property-value pair to our object
+            product.newproperty='Cotton Balls'
+            console.log(product);
+
+            //Deleting a property from object
+            delete product.newproperty;
+            console.log(product);
+
+            // Typeof
+            console.log(typeof product);
+
+            // Objects make our code more organised
+            
+
+            const product2={
+                name:'shirt',
+                ['delivery-time']:'1 day',   // Using Bracket Notation to add property
+                'delivery-time2': '2 day'    // This is fine too
+            };
+
+            //BRACKET NOTATION
+            console.log(product2['name']);
+            // Bracket notation lets us use properties that dont work with dot notation EX:-
+//          console.log(product2.delivery-time);  :-  This will give error( JS considers delivery-time as math)
+            console.log(product2['delivery-time']) // This is fine as the property is noted as string
+
+            
+            const product3={
+                class:'10 th',
+                rating: {           // NESTED OBJECT ( object as value of another object)
+                    star:4.5,
+                    count:87
+                },
+                fun:function function1(){                 // Function inside a object
+                    console.log('function-inside-object HEHE');
+                }
+            }
+
+            //Accesing Nested Objects
+            console.log(product3.rating.star);
+            console.log(product3.rating.count);
+
+            //Accessing functions inside objects
+            product3.fun();
+
+
+/*
+            Function inside objects are knows as Methods
+            REM:-(1)  'console' is a Built-in object
+                      'log' is a Method inside console object
+                       How we access this method:- console.log()
+            
+                 (2)  'Math' is a Build-in object
+                      'random' is a Method inside Math object
+                       How we access this method:- Math.random();
+
+
+            We need to know about some BUILD-IN OBJECTS
+               1) console
+               2) Math
+               3) JSON     
+               4) localStorage      
+*/
+
+   /*
+    JSON:- (JavaScript Object Notation)
+           Its an syntax
+           similar to javascript Objects
+           Has less feature
+
+           1) All PROPERTIES & STRINGS must use double cote ""
+           2) JSON doesnt support functions as values
+
+           THEN WHY THE HECK WE USE JSON
+                            
+              Javascript Object |     JSON
+                                |
+             Can only be used   |  IS UNIVERSAL
+              in javascript     |  (can be undersood by any language )
+                Langauge        |  
+                                |  used when we send data between computers
+                                |  used to store data
+   */
+
+    
+   // A BUILT-IN JSON object helps us convert Javascript Object into JSON using JSON.stringify()
+
+   console.log(JSON.stringify(product3));   // Converts product3 object into JSON format
+   console.log(typeof JSON.stringify(product3)); // The type of this is string
+            
+   // We can also convert JSON to Javascript Object using JSON.parse()
+
+   const jsonstring=JSON.stringify(product3);
+   JSON.parse(jsonstring);
+   console.log(JSON.parse(jsonstring));
+
+
+   /*
+    localStorage:- Used to save values more permanently
+
+      We have variables and variables are temporary, when we refresh/ close the page all
+      the variables are deleted
+
+      In our rock_paper_scissors game when we refresh the page the score gets reset
+      hence to not reset after refreshing the page we will use localStorage
+      go to 08-rock-paper-scissor-score.html
+   */
+
+   
+    
+
+        </script>
+    </body>
+</html>
