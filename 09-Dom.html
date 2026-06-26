@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DOM </title>
+    </head>
+    <body>
+        <button>Hello</button>
+        <button class="js-button"> Second Button</button>
+        <script>
+
+            // DOM is another BUILT-IN object known as Document Object
+
+//          document.body.innerHTML='hello';   // Removes everything from page and add a 'hello' text
+            //Document object and webpage are linked together
+
+            document.title='Good BOY'; // Changes the title of the webpage
+            //The document object represents/Models the webpage, hence its known as Document Object Model (DOM)
+
+            /* Syntax Rules For DOM
+            The DOM is just similar to an object, hence
+            its syntax is also same, we can access it properties & methods
+            etc
+            */
+           //Learning About Properties and Methods
+          
+//      1)  
+           console.log(document.title);  // output title : Good BOY
+           document.title='changed';     // Changing title
+
+//      2) 
+           console.log(document.body);   // Takes entire body of html and prints it
+        // This Means that we can have HTML elements inside javascript( whowwwww!!!!!!!!!!)
+        // ie, The DOM combines Javascript and HTML together, and give Javascript control of the webpage
+        // The HTML element is converted into a Javascript Object,ie check
+           console.log(typeof document.body); // outputs:- object
+
+           document.body.innerHTML           //This controls entire HTML of the webpage
+//         document.body.innerHTML='Changed' //This replaces all the HTML to 'Changed'
+//         document.body.innerHTML='<button> Good Job! </button>'  // We can replace HTMl code with New HTML code
+                  
+//      3) 
+           document.querySelector('button')               // Lets us get any element from the page and put it inside JavaScript, here this entire thing stores button element
+           console.log(document.querySelector('button')); // prints the entire button element.
+           //This effects only the first button
+                     
+//      4)   Every HTML element has a property .innerHTML, which lets us control the HTML inside the element.
+
+           console.log(document.querySelector('button').innerHTML);  // prints Good Job!
+           document.querySelector('button').innerHTML='CHANGED THIS BUTTON USING queryselector & innerHTML '
+
+//      5)   Using Class attribute to access a particular button
+           
+            console.log(document.querySelector('.js-button'));
+           
+             
+
+        </script>
+    </body>
+</html>

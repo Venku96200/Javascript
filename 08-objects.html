@@ -6,7 +6,7 @@
     <body>
         <script>
             // An object groups multiple values together
-            // Inside a object we can store any type of values (we ca also store objects as values )
+            // Inside a object we can store any type of values (we can also store objects as values )
 /*
              const object_name={
 Template:-      property:'values'
@@ -133,11 +133,133 @@ Template:-      property:'values'
 
       In our rock_paper_scissors game when we refresh the page the score gets reset
       hence to not reset after refreshing the page we will use localStorage
-      go to 08-rock-paper-scissor-score.html
+      go to 08-rock-paper-scissor-score.html and analyse carefully
    */
 
-   
+   /* 
+    Auto-Boxing
+
+    # We know that objects have properties and Methods, its surprising to know
+      that other values also have properties and methods
+
+    # How is this possible, we know that strings are not objects, so how can they
+      have properties and Methods, HENCE WE Introduce AUTO-BOXING
+
+    # Javascript automatically wraps the string 'hello' into a special object which
+      have many properties and methods.
+
+    # Autoboxing is not there for null or undefined  
+   */
+
+
+   //1) String
+   console.log('hello'.length);    // Length property used to find the length of string 'hello'
+   console.log('hello'.toUpperCase());  //toupperCase() Method used to convert 'hello' to uppercase 'HELLO'
+
+
+//---------------------------------------------------------------------------------------------------------------------------------
+
+    /* OBJECT ARE REFERENCES :-   WHATTTTTTTTTTT!!!!!!!!!!!!!!!
+
+    #  We might think that objects are variables that contain
+       property:value pair in them, but in reality its a bit different,
+
+    #  The property:value pairs are stored in the computer storage somewhere, the
+       object are equal to the reference which is pointing to that pairs.
+
+    #  when we do object2=object1 we arent copying entire data of object1 into
+       object2, we are just creating a copy reference and giving it to object2
+       THIS IS KNOWS AS COPY BY REFERENCE
+
+    #  Even though we have const object1 we can change the values of properties
+       of object1, because, const prevents from changing the reference that is assigned
+       to the object1, but we can reachin the object reference and change the value   
+    */
+
+    const object1={
+        message:'hello'
+    }
+    const object2=object1;  //Copy by reference
+
+    object2.message='lorn';  // The reference of both object1 and object2 is pointing to just one property message
+    console.log(object1);    // so changing value of message property through object1 or object2 is the same
     
+
+
+    //---------------------------------------------------------------------
+
+    // We cannot compare object directly
+
+    const object3={
+        message:'lorn'
+    };
+
+    console.log(object3 === object2);  //False, we are comparing references not the values
+
+    //object3 contains a different address, than object2 && object1
+
+
+    //----------------------------------------------------------------------------------------
+
+    //ShortCuts:--
+
+    // 1) Destructuring :- Easier way to take properties out of an object
+
+    const object4={
+        message:'good Job',
+        price: 799,
+        friends:'yyt'
+    }
+    //const message = object.message;
+    //This is similar to
+    const {message}=object4;            // Valid when we want to store the value into a variable same name as the property name of that value
+
+
+    // Can be used to get multiple values out
+    const{price,friends}=object4;
+
+    console.log(message);
+    console.log(price);
+    console.log(friends);
+     
+
+    // 2) The SHORT HAND Property
+   
+    /*
+    const object5={
+        message:message
+    }
+    */   
+
+    //The top commented code is similar to
+    const object5={
+        message           // Shorthand property
+    }
+    console.log(object5);   // will print message:'good Job'
+
+
+    // ShortHand Method
+
+    /*
+    const object6={
+     job:'teacher',
+     age:'34',
+     method: function function1(){
+     console.log('method');
+    }
+} 
+    */
+
+    // The top code is similar to 
+
+    const object6={
+     job:'teacher',
+     age:'34',
+     method(){              //ShortHa nd METHOD
+     console.log('method');
+    }
+}
+
 
         </script>
     </body>

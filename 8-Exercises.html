@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 8d</title>
+    </head>
+    <body>
+        <script>
+            const product1={
+                name:'Marie',
+                price:30
+            }
+
+            const product2={
+                name:'Marie',
+                price:30
+            }
+
+            function compareprice(product1,product2){
+                if(product1.price>product2.price){
+                    return product1.name;
+                }
+                return product2.name;
+            }
+
+            function issameproduct(product1,product2){
+                if(product1.price===product2.price && product1.name===product2.name){
+                    return true;
+                }
+                return false;
+            }
+
+            console.log(compareprice(product1,product2));
+            console.log(issameproduct(product1,product2));
+
+        </script>
+
+    </body>
+</html>

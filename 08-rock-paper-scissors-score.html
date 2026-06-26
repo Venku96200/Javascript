@@ -18,11 +18,29 @@
                 score.Wins=0;
                 score.Ties=0;
                 score.Losses=0;
+                localStorage.removeItem('score_name');  // Deletes the score and its value from localStorage 
                  "> Reset Score</button>         
         <script>
-            const score=JSON.parse(localStorage.getItem('score'))
-        
-        
+
+
+            /*
+            Dont get confused, after writing
+            const score={
+            Wins:0,
+            Losses:0,
+            Ties:0
+            }
+            I played the game in the webpage and stored some values
+            inside score, without refreshing the page, i changed the code 
+            to store that score value in localstorage and use it 
+            when ever the reseet is done..
+            */
+           
+            const score=JSON.parse(localStorage.getItem('score_name'))|| {
+                    Wins:0,
+                    Losses:0,
+                    Ties:0
+                };
 
             function result(choice){
                 const comp1=Math.random();
@@ -65,18 +83,18 @@
                        score.Losses++;
                     }
                 }
-                localStorage.setItem('score',JSON.stringify(score));
+                localStorage.setItem('score_name',JSON.stringify(score));
                 return result;
             }
 
             
 
             /*
-              The first string 'score' is the name, this how we will access the VALUE
-              the second string 'stringed_score' is a string VALUE that we are storing
+             #  The first string 'score_name' is the name, this how we will access the VALUE
+             #  The second string 'stringed_score' is a string VALUE that we are storing
 
               Now lets figure out how to store the score in localS
-               1) Select any name:- 'score'
+               1) Select any name:- 'score_name'
                2) We cannot just store score object into localStorage we will have to convert it into string
                3) Convert score object into string using JSON.stringify()
             */
