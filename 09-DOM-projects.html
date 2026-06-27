@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head></head>
+    <body>
+        <p> Youtube Subscribe Button</p>
+        <button class="js-subscribe" onclick="subscribe();">       Subscribe</button>
+         
+        <p> Amazon Shipping Calculator</p>
+        <p> Orders under $40 = +$10 Shipping.</p>
+        <p> Orders over $40 = Free Shipping.</p>
+        <input class="inputs" type="text" placeholder="Cost of order" onkeydown="handleCostKeydown()"> 
+        <button onclick="
+        calculateTotal();
+        "
+        >Calculate</button>
+        <p class="js-totalCost"></p>
+        <script> 
+            function subscribe(){
+                const element=document.querySelector('.js-subscribe');
+                if(element.innerText==='Subscribe'){                   //Here we used innerTEXT to get just the text inside the element (Not THE SPACES)
+                    element.innerHTML='Subscribed';
+                }else{
+                    element.innerHTML='Subscribe';
+                }
+            }
+
+            function calculateTotal(){
+                let amount=Number(document.querySelector('.inputs').value);     // We use .value property on HTML elements to get the value that we inputed, using Number() to convert string to number
+                if(amount<40){
+                    amount*=100;
+                    amount+= 1000;
+                    amount=amount/100;
+                }
+                document.querySelector('.js-totalCost').innerHTML=`$${amount}`;
+            }
+
+            function handleCostKeydown(){
+                console.log(event.key);   // Prints the key that we pressed in console
+                if(event.key==='Enter'){
+                    calculateTotal();
+                }
+            }
+
+
+            // Some stuffs:-
+
+            console.log(String(25))   // Converts 25 into string
+            console.log('25'- 5)   // if a string ONLY contains a number, and we do - * /,  JS automatically convert '25' into a number
+            console.log('25'+ 5)   // This is kinda opposite, if we use + then the number gets converted into a number
+            //DONT TO MATH USING STRINGS
+
+            /* WINDOW OBJECT    :- THE MAIN BOSS (JS AUTOMATICALLY ADDS THIS)
+
+            We know that Document Object represents the WEBPAGE, but
+            the Window Object represents the BROWSER
+            */
+
+            window.document   // document object is part of window(browser)
+            window.console    // Console object is part of window(browser)
+            window.alert      // popups are also part of window(browser)
+        </script>
+    </body>
+</html>
+
+<!--
+
+//Clicks, Keydowns  are knows as events
+//onclick,onkeydown  are known as event listeners 
+
+/*
+Event Listners:-
+
+onclick    = Click
+onKeydown  = Key Press
+onscroll   = scrolling
+onmouseenter = hovering over
+onmouseleave = stop hovering over
+....and many more
+
+Every event listener gets an event object
+*/
+
+
+/* What are we trying to accomplish
+
+When we enter stuff in input element and press ENTER
+the calculate button should get pressed (ie, calculateTotal() function should run)
+
+
+*/
+-->
+
+

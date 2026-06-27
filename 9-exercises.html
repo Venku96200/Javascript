@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button onclick="clicked('Heads');">Heads</button>
+        <button onclick="clicked('Tails')">Tails</button>
+        <p class="js-result">You Chose: None</p>
+
+        <input class="js-input" type="text" placeholder="Enter Your Name" onkeydown=" 
+           if(event.key==='Enter'){
+              name_enter();
+           }">
+           
+        <button onclick="name_enter()">Submit</button>
+        <p class="js_result_name"></p>
+
+        <script>
+            function clicked(face){
+                document.querySelector('.js-result').innerHTML=`You Chose: ${face}`;
+            }
+            function name_enter(){
+                const name=document.querySelector('.js-input').value;
+                document.querySelector('.js_result_name').innerHTML=`Your name is ${name}`;
+            }
+
+        </script>
+    </body>
+</html>

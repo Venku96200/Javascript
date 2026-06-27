@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variables Exercises</title>
+
+
+
+    </head>
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="
+                        if(quantity==10){
+                            full_empty('Cart is Full');
+                        }else{
+                            quantity++;
+                            full_empty('');
+                            display_quantity(quantity);
+                        }">Add to Cart</button>
+        <button onclick="
+                        if(quantity==0){
+                            full_empty('Cart is Empty');
+                        }else{
+                            quantity--;
+                            full_empty('');
+                            display_quantity(quantity);
+                        }">-1</button>
+        <button onclick="
+                        if(quantity+2>10){
+                            full_empty('Cart is Full');
+                        }else{
+                            quantity+=2;
+                            full_empty('');
+                            display_quantity(quantity);
+                        }">+2</button>
+        <button onclick="
+                        if(quantity+3>10){
+                            full_empty('Cart is Full');
+                        }else{
+                            quantity+=3;
+                            full_empty('');
+                            display_quantity(quantity);
+                        }">+3</button>
+        <button onclick="full_empty('Reset')
+                         quantity=0;
+                         display_quantity(quantity);">Reset cart</button>
+
+        <p class="Display"></p>    
+        <p class="fullorempty"></p>            
+        <script>
+            let quantity=0;
+            function display_quantity(quantit){
+                document.querySelector('.Display').innerHTML= `Cart Quantity: ${quantit}`;
+            }
+            function full_empty(stuff){
+                document.querySelector('.fullorempty').innerHTML=stuff;
+            }
+        </script>
+
+    </body>
+</html>

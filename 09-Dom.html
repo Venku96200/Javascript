@@ -23,11 +23,11 @@
             */
            //Learning About Properties and Methods
           
-//      1)  
+//      1)  ----------------------------------------------------------
            console.log(document.title);  // output title : Good BOY
            document.title='changed';     // Changing title
 
-//      2) 
+//      2)  ---------------------------------------------------------------
            console.log(document.body);   // Takes entire body of html and prints it
         // This Means that we can have HTML elements inside javascript( whowwwww!!!!!!!!!!)
         // ie, The DOM combines Javascript and HTML together, and give Javascript control of the webpage
@@ -35,10 +35,10 @@
            console.log(typeof document.body); // outputs:- object
 
            document.body.innerHTML           //This controls entire HTML of the webpage
-//         document.body.innerHTML='Changed' //This replaces all the HTML to 'Changed'
+//         document.body.innerHTML='Changed' //This replaces all the HTML to 'Changed' string
 //         document.body.innerHTML='<button> Good Job! </button>'  // We can replace HTMl code with New HTML code
                   
-//      3) 
+//      3)  --------------------------------------------------------------------- 
            document.querySelector('button')               // Lets us get any element from the page and put it inside JavaScript, here this entire thing stores button element
            console.log(document.querySelector('button')); // prints the entire button element.
            //This effects only the first button
@@ -50,10 +50,8 @@
 
 //      5)   Using Class attribute to access a particular button
            
-            console.log(document.querySelector('.js-button'));
-           
-             
-
+            console.log(document.querySelector('.js-button'));  // . is a class selector
+            
         </script>
     </body>
 </html>
