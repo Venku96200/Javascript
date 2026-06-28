@@ -2,76 +2,111 @@
 <html>
     <head>
         <title> Calculator</title>
+        <style>
+            body{
+                background-color: black;
+            }
+            .js-result{
+                font-size:40px;
+                color:white;
+                font-weight:bold;
+            }
+            .gray{
+                width:60px;
+                height:60px;
+                border-radius: 30px;
+                background-color: rgb(39, 39, 39);
+                color:white;
+                border:none;
+                font-size:28px;
+                margin-right:5px;
+            }
+            .orange{
+                width:60px;
+                height:60px;
+                border-radius: 30px;
+                background-color: orange;
+                color:white;
+                border:none;
+                font-size:28px;
+                margin-right:5px;
+
+            }
+        </style>
     </head>
     <body>
         <p> Calculator</p>
+        <p class="js-result"></p>
         <p>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('1'));
                 "
             >1</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('2'));
                 ">2</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('3'));
                 ">3</button>
-            <button onclick="
+            <button class="orange" onclick="
                 console.log(result(' + '));">+</button>
         </p>
         <p>
-            <button onclick="
+            <button class="gray" onclick="
                console.log(result('4'));
                 "
             >4</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('5'));
                 ">5</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('6'));
                 ">6</button>
-            <button onclick="
+            <button class="orange" onclick="
                 console.log(result(' - '));">-</button>
         </p>
 
         <p>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('7'));
                 "
             >7</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('8'));
                 ">8</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('9'));
                 ">9</button>
-            <button onclick="
+            <button class="orange" onclick="
                 console.log(result(' * '));">*</button>
         </p>
         <p>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('0'));
                 "
             >0</button>
-            <button onclick="
+            <button class="gray" onclick="
                 console.log(result('.'));
                 ">.</button>
-            <button onclick="
+            <button class="gray" onclick="
                 calculation=eval(calculation)  // Here eval(calculation) converts the calculation string into actual math
+                document.querySelector('.js-result').innerHTML=calculation;
                 console.log(calculation);
                 ">=</button>
-            <button onclick="
+            <button class="orange" onclick="
                console.log(result(' / '));">/</button>
         </p>
-        <button onclick="
+        <button class="gray" onclick="
             calculation='';
+            document.querySelector('.js-result').innerHTML='';
             console.log('CLEARED!')
-        "
+        "style="font-size:20px"
         >Clear</button>
         <script>
             let calculation='';
             function result(click){
                 calculation+=click;
+                document.querySelector('.js-result').innerHTML=calculation;
                 return calculation;
             } 
         </script>

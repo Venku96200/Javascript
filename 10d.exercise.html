@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .deactive{
+                background-color: rgb(228, 228, 228);
+                color:black;
+                padding:10px;
+                border:none;
+                border-radius: 10px;
+                cursor:pointer;
+                margin-right: 10px;
+            }
+            .active{
+                background-color: black;
+                color: white;
+                padding:10px;
+                cursor:pointer;
+                border-radius: 10px;
+                border:none;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="change_class('.js-class1')" class="js-class1 deactive">Gaming</button>
+        <button onclick="change_class('.js-class2')" class="js-class2 deactive">Music</button>
+        <button onclick="change_class('.js-class3')" class="js-class3 deactive">Tech</button>
+        <script>
+            function change_class(main_class){
+                const element=document.querySelector(main_class);
+                if(element.classList.contains('deactive')){
+                    element.classList.remove('deactive');
+                    element.classList.add('active');
+                }else{
+                    element.classList.remove('active');
+                    element.classList.add('deactive');
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
