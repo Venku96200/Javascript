@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            body{
+                font-family: Arial;
+                font-size: 20px;
+            }
+
+            .subscribe-button{
+                width:100px;
+                background-color: black;
+                color:white;
+                border-radius: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-weight:bold;
+                font-family:arial;
+                border:none;
+                cursor:pointer;
+                margin-bottom: 30px;
+            }
+            .is-subscribed{
+                background-color: rgb(240, 240, 240);
+                color:black;
+            }
+            .css-input{
+                font-size:15px;
+                padding:10px;
+            }
+            .button2{
+                width:90px;
+                font-size:15px;
+                color:white;
+                background-color:green;
+                border:none;
+                padding:10px;
+                cursor:pointer;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <p> Youtube Subscribe Button</p>
+        <button class="js-subscribe subscribe-button" onclick="subscribe();"> Subscribe</button>
+
+        <p> Amazon Shipping Calculator</p>
+        <p> Orders under $40 = +$10 Shipping.</p>
+        <p> Orders over $40 = Free Shipping.</p>
+        <input class="js-inputs css-input " type="text" placeholder="Cost of order" onkeydown="handleCostKeydown()"> 
+        <button class="button2" onclick="
+        calculateTotal();
+        "
+        >Calculate</button>
+        <p class="js-totalCost"></p>
+        <script> 
+            function subscribe(){
+                const element=document.querySelector('.js-subscribe');
+                if(element.innerText==='Subscribe'){                   
+                    element.innerHTML='Subscribed';
+                    element.classList.add('is-subscribed');
+                }else{
+                    element.innerHTML='Subscribe';
+                    element.classList.remove('is-subscribed');
+                }
+            }
+            function calculateTotal(){
+                let amount=Number(document.querySelector('.js-inputs').value);  
+                if(amount<40){
+                    amount*=100;
+                    amount+= 1000;
+                    amount=amount/100;
+                }
+                document.querySelector('.js-totalCost').innerHTML=`$${amount}`;
+            }
+            function handleCostKeydown(){
+                console.log(event.key);
+                if(event.key==='Enter'){
+                    calculateTotal();
+                }
+            }            
+        </script>
+    </body>
+</html>
+
+<!--
+ So now how to connect CSS to JS or , how to make CSS change when we press button.
+
+ #  Every HTML element has another property(just like innerHTML), ie .classList
+
+ #  .classList:- Gives us control of the class attribute
+
+ # classList is an object(ie it has properies and methods that we can use)
+
+   (1) .add() :- This adds a new class to the element
+   (2) .remove() :- This removes the existing class of that element
+
+ 
+
+    solutions:-
+
+    (1) When we click button , We add a new class.
+                              This class Will have different styles.
+
+
+-->

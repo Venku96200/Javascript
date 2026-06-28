@@ -1,0 +1,25 @@
+body{
+                background-color: rgb(25,25,25);
+                color: white;
+                font-family:arial;
+            }
+            .move-button{
+                width: 120px;
+                height: 120px;
+                background-color: rgb(25,25,25);
+                border-width: 3px;
+                border-style: solid;
+                border-radius: 60px;
+                border-color: white;
+                margin-right:10px;
+                cursor:pointer;
+            }
+            .move-icon{
+                width:55px;
+            }
+            .result_line{
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                gap:10px;
+            }
