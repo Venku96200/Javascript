@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .body{
+                font-family:arial;
+            }
+
+            .css-todo{
+                padding:10px;
+                font-size:15px;
+                margin-right:10px;
+            }
+            .css-date{
+                padding:9px;
+                font-size:15px;
+                width:150px;
+                margin-right:10px;
+            }
+            .css-add-button{
+                width:80px;
+                height:40px;
+                background-color: green;
+                color:white;
+                border:none;
+                cursor:pointer;
+            }
+            .inputs{
+                display:flex;
+                vertical-align: middle;
+            }
+            .display{
+                font-family: arial;
+                font-size:20px;
+                margin-left:10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <p> Todo List </p>
+        <div class="inputs">
+            <input class="js-todo css-todo" placeholder="Todo Name">
+            <input type="date" class="js-date css-date" >
+            <button class="css-add-button" onclick="displaytodo()">Add</button>
+        </div>
+        
+        <div class="js-display display"></div>
+        <script>
+                let array_value = [];
+                let array_date = [];
+
+                function displaytodo() {
+                    const value = document.querySelector('.js-todo').value;
+                    const date = document.querySelector('.js-date').value;
+
+                    array_value.push(value);
+                    array_date.push(date);
+
+                    document.querySelector('.js-todo').value = '';
+                    document.querySelector('.js-date').value = '';
+
+                    renderTodo();
+                }
+
+                function deleteTodo(index) {
+                    array_value.splice(index, 1);
+                    array_date.splice(index, 1);
+                    renderTodo();
+                }
+
+                function renderTodo() {
+                    let todoelement = '';
+
+                    for (let i = 0; i < array_value.length; i++) {
+                        todoelement += `
+                        <div style="display:flex; margin-top:10px;">
+                            <div style="width:215px; padding-top:10px;">
+                                ${array_value[i]}
+                            </div>
+
+                            <div style="width:173px; padding-top:10px;">
+                                ${array_date[i]}
+                            </div>
+
+                            <button
+                                onclick="deleteTodo(${i})"
+                                style="width:80px;height:40px;background:red;color:white;border:none;cursor:pointer;">
+                                Delete
+                            </button>
+                        </div>`;
+                    }
+
+                    document.querySelector('.js-display').innerHTML = todoelement;
+                }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Arrays and Loops </title>
+    </head>
+    <body>
+        <script>
+            /* Arrays- another type of value
+                       Represents a list of values
+            */
+           const myArray=[10,20,30];
+           console.log(myArray);
+
+            // Accessing elements from array(JS is a 0-indexed  language)
+           console.log(myArray[0]);
+
+           // Changing a specific element from an array
+           myArray[0]=99;
+           console.log(myArray);
+
+           // Array can store different type
+           myarray1=[1,'hello',true,{name:'socks'},[1,2,'r']];
+
+           // Arrays are special typeof objects
+           console.log(typeof myArray);               //prints object
+
+           // Checking is the given value is an array
+           console.log(Array.isArray(myarray1));       //prints true
+
+           //As arrays are objects they too have properties and method
+
+           // 1) Length of an array using:- .length property
+           console.log(myArray.length);
+
+           // 2) adding a value to the end of the array using:- .push() method
+           myArray.push(100);
+           console.log(myArray)
+
+           // 3) Removing a value from array using:- .splice(index,number of values to remove) method
+           myArray.splice(0,1);
+           console.log(myArray); // [99,20,30,100] -> [20,30,100]
+           myArray.splice(0,2);
+           console.log(myArray); // [20,30,100] -> [100]
+
+           //LOOPS
+
+           let i=1;
+           while(i<=5){            //While loop
+            console.log(i)
+            i++;
+           }
+
+
+           for(let i=0;i<=3;i++){  // For loop
+            console.log(i);
+           }
+
+           const todo=[
+            'make dinner',
+            'Wash Dishes',
+            'Watch Youtube'
+           ];
+           for(let i=0;i<todo.length;i++){  // Lopping through an array
+            console.log(todo[i]);
+           }
+
+           const nums=[1,2,3];
+           /*
+            Accumulator Pattern
+            1) Create a variable to store the result
+            2)Loop through the array and update the result
+           */ 
+           const total=0;
+           for(let i=0;i<nums.length;i++){
+            total+=nums[i];
+           }
+           console.log(total);
+
+           // While Creating websites using javascripts we follow 3 steps
+           // 1)   Save the data
+           // 2)  Generate the HTML
+           // 3)  Make it interactive
+        </script>
+    </body>
+</html>

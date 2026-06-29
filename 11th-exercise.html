@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            const array=['apple','grape','apple','apple'];
+
+            function hash(ar){
+                let object={};
+                for(let i=0;i<ar.length;i++){
+                    if(object[ar[i]]){
+                        object[ar[i]]++;
+                    }else{
+                        object[ar[i]]=1;
+                    }
+                    
+                }
+                console.log(object);
+            }
+            hash(array);
+        </script>
+    </body>
+</html>
