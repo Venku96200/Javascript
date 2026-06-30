@@ -1,0 +1,32 @@
+.body{
+                font-family:arial;
+            }
+
+            .css-todo{
+                padding:10px;
+                font-size:15px;
+                margin-right:10px;
+            }
+            .css-date{
+                padding:9px;
+                font-size:15px;
+                width:150px;
+                margin-right:10px;
+            }
+            .css-add-button{
+                width:80px;
+                height:40px;
+                background-color: green;
+                color:white;
+                border:none;
+                cursor:pointer;
+            }
+            .inputs{
+                display:flex;
+                vertical-align: middle;
+            }
+            .display{
+                font-family: arial;
+                font-size:20px;
+                margin-left:10px;
+            }

@@ -81,6 +81,28 @@
            // 1)   Save the data
            // 2)  Generate the HTML
            // 3)  Make it interactive
+
+           // Arrays Are References
+
+           const array1=[1,2,3];
+           const array2=array1;
+           //array1 and array2 are pointing to same address
+           //hence changing array2 also changes array1
+
+           array2.push(4);
+           console.log(array1);
+           console.log(array2);
+
+           //if we dont want this behaviour then we can use .slice(), to create a new copy of memory
+
+           const array3=array1.slice();
+           //here array3 and array1 point to two different arrays
+
+
+           //Shortcut:- Destructuring
+           const [firstvalue,secondvalue]=[1,2,3,4];
+           console.log(firstvalue);
+           console.log(secondvalue);
         </script>
     </body>
 </html>
