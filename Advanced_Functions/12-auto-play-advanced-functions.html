@@ -18,15 +18,10 @@
                  "><img class ="move-icon" src="scissor-emoji.png" ></button>
         <p class="js-result"></p>   
         <p class="js-score"></p>      
-        <button class="Reset" onclick=" 
-                score.Wins=0;
-                score.Ties=0;
-                score.Losses=0;
-                localStorage.removeItem('score_name');  // Deletes the score and its value from localStorage 
-                updateScoreElement();
-                updateResultElement('');
-                 "> Reset Score</button>    
-        <button class="js-auto-play autoplay" onclick="autoplay()">Auto Play</button>              
+        <button class="Reset js-reset"> Reset Score</button>         <!--Removed onclick attribute, instead we will use EventListeners--> 
+        <button class="js-auto-play autoplay">Auto Play</button>     <!--Removed onclick attribute, instead we will use EventListeners--> 
+
+        <div class="Warning css-warning"></div>
         <script src="12auto-play.js"> </script>
 
     </body>

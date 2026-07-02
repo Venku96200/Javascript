@@ -65,16 +65,16 @@ const score=JSON.parse(localStorage.getItem('score_name'))|| {
                 document.querySelector('.js-result').innerHTML=resultText;
             }
 
-            
-            
-            let isplaying=false;
+            let isplaying=false;  // To keep track wether the autoplay button is on or off
             let intervalid;     // An variable to store the setinterval id
 
             function autoplay(){
                 if(isplaying===false){
-                    
-                    intervalid=setInterval(function(){       // setinterval returns a id, (it waries each time we run it)
-                    const rand=Math.random();
+                    setTimeout(function(){
+                            document.querySelector('.js-auto-play').innerHTML='STOP!';
+                        },500);
+                    intervalid=setInterval(()=>{       // setinterval returns a id, (it waries each time we run it)
+                    const rand=Math.random();          // We have used arrow function , ie replaced function() by ()=>
                     let vari='';
                     if(rand>=0 && rand<1/3){
                         vari='rock';    
@@ -87,7 +87,67 @@ const score=JSON.parse(localStorage.getItem('score_name'))|| {
                     },1000);
                     isplaying=true;
                     }else{
+                        setTimeout(function(){
+                            document.querySelector('.js-auto-play').innerHTML='Auto Play';
+                        },500);
                         clearInterval(intervalid);    // Clearing/ stopping the running game
                         isplaying=false;
                     }
+
             };
+            
+            const autoplayelement=document.querySelector('.js-auto-play');
+            autoplayelement.addEventListener('click',()=>autoplay());
+
+ document.body.addEventListener('keydown',(event)=>{
+    if(event.key==='a'){
+        autoplay();
+    }
+ });                                 
+                                                        
+// You can do the same for reset button(ie use eventlistener instead of onclick())
+
+const resetbuttonelement=document.querySelector('.js-reset');
+resetbuttonelement.addEventListener('click',()=>{
+    document.querySelector('.Warning').innerHTML=`<p class="reset_warning">Are You sure you want to reset the score? </p> <button class="reset_yes">Yes</button><button class="reset_no"> NO</button>`;
+    const yes=document.querySelector('.reset_yes');
+    const no=document.querySelector('.reset_no');
+
+    yes.addEventListener('click',()=>{
+                score.Wins=0;
+                score.Ties=0;
+                score.Losses=0;
+                localStorage.removeItem('score_name');  // Deletes the score and its value from localStorage 
+                updateScoreElement();
+                updateResultElement('');
+                document.querySelector('.Warning').innerHTML='';
+    })
+    no.addEventListener('click',()=>{
+        document.querySelector('.Warning').innerHTML='';
+    })
+
+                
+});
+
+
+
+//  .addEventListener()  with Keydowns
+// What if instead of pressing the button we could press buttons on our keyboard
+// The keydown event give out a event parameter, that can be used to find out wich key is pressed using event.key
+
+document.body.addEventListener('keydown',(event)=>{
+    if(event.key==='r'){
+        result('rock');
+    }else if(event.key==='p'){
+        result('paper');
+    }else if(event.key==='s'){
+        result('scissor');
+    }
+});
+
+
+                                                
+            
+            
+
+            

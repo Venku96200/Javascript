@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button class="js-button1" onclick="function1()">Start</button>
+        <script>
+            let intervalid;
+            function function1(){
+                const element=document.querySelector('.js-button1');
+                setTimeout(function(){
+                    element.innerHTML='Finished';
+                },1000);
+                element.innerHTML='Loading...';
+            }
+
+        </script>
+
+
+
+    </body>
+</html>

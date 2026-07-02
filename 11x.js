@@ -1,5 +1,5 @@
-                let array_value = JSON.parse(localStorage.getItem('stuff1'));
-                let array_date = JSON.parse(localStorage.getItem('stuff2'));
+                let array_value = JSON.parse(localStorage.getItem('stuff1'))||[];
+                let array_date = JSON.parse(localStorage.getItem('stuff2'))||[];
 
                 function displaytodo() {
                     const value = document.querySelector('.js-todo').value;
@@ -47,3 +47,13 @@
                     localStorage.setItem('stuff2',JSON.stringify(array_date));
                 }
                 renderTodo();
+
+                const addbuttonelement=document.querySelector('.js-add-button');
+                addbuttonelement.addEventListener('click',()=>{
+                    displaytodo();
+                });
+
+                const deletebuttonelement=document.querySelectorAll('.js-delete-button')   // Look carefully that we have used querySelectorAll() rather than querySelector()
+                //deletebuttonelement is and array that stores all the buttons with class='js-delete-button)
+
+                

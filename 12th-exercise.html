@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <input class="input1" placeholder="Enter First Value">
+        <input class="input2" placeholder="Enter Second Value">
+        <button class="js-button"> Calculate </button>
+        <p class="js-Display"></p>
+        <script>
+            
+            const buttonelement=document.querySelector('.js-button');
+            buttonelement.addEventListener('click',()=>{
+                const value1=document.querySelector('.input1').value;
+                const value2=document.querySelector('.input2').value;
+                const result=value1*value2;
+                document.querySelector('.js-Display').innerHTML=result;
+                setTimeout(()=>{
+                    document.querySelector('.js-Display').innerHTML='';
+                },2000)
+            });
+// 12I 
+            const countpositive=(nums)=>{
+                let count=0;
+                nums.forEach(element =>{
+                    if(element>=0)count++;
+                });
+                return count;
+            }
+            console.log(countpositive([-2,3,-5,7,10]));
+
+// 12m   
+             const addNum=(nums,num)=>{
+                const new_array=(nums.map((value)=>{
+                                return value+num;
+                                }));
+                return new_array                
+             };   
+             
+             console.log(addNum([-2,-1,0,99],3));
+
+//12n          
+             const removeEgg=(food)=>{
+                let count=0;
+                const new_array=food.filter((element)=>{
+                                            if(element==='egg' && count<2){
+                                                count++;
+                                                return false;
+                                            }else{
+                                                return true;
+                                            }
+                                            });
+                return new_array;                            
+             };
+             
+             console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+
+        </script>
+        
+    </body>
+</html>
